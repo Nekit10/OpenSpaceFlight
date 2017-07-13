@@ -2,7 +2,7 @@ package com.ngtech.spaceflight.desktop;
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
-import com.ngtech.spaceflight.openSpaceFlight;
+import com.ngtech.spaceflight.OpenSpaceFlight;
 
 /**
  * Desktop launcher. launches game from module core (Class OpenSpaceFight).
@@ -12,14 +12,23 @@ import com.ngtech.spaceflight.openSpaceFlight;
  * @since 1.0
  */
 public class DesktopLauncher {
+
+	/**
+	 * Launch game
+	 *
+	 * @since 1.0
+	 * @param arg - game arguments
+	 */
 	public static void main (String[] arg) {
+		//Create application config
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 
 		//Desktop launching config
-		config.fullscreen = true;
-		config.height = 1080;
-		config.width = 1920;
+		config.fullscreen = true; //Set fullscreen mode
+		config.height = OpenSpaceFlight.HEIGHT; //Set height to 1080
+		config.width = OpenSpaceFlight.WIDTH; // Set width to 1920
 
-		new LwjglApplication(new openSpaceFlight(), config);
+		//Launch game
+		new LwjglApplication(new OpenSpaceFlight(), config);
 	}
 }
